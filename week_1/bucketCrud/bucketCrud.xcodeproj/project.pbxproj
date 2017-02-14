@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070826761E52A36B00D6E28D /* bucketCrud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 070826741E52A36B00D6E28D /* bucketCrud.xcdatamodeld */; };
 		078F01A71E4D5CBE00DC2EBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F01A61E4D5CBE00DC2EBC /* AppDelegate.swift */; };
 		078F01A91E4D5CBE00DC2EBC /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F01A81E4D5CBE00DC2EBC /* BucketListViewController.swift */; };
 		078F01AC1E4D5CBE00DC2EBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078F01AA1E4D5CBE00DC2EBC /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070826751E52A36B00D6E28D /* bucketCrud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bucketCrud.xcdatamodel; sourceTree = "<group>"; };
 		078F01A31E4D5CBE00DC2EBC /* bucketCrud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bucketCrud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078F01A61E4D5CBE00DC2EBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078F01A81E4D5CBE00DC2EBC /* BucketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				078F01A61E4D5CBE00DC2EBC /* AppDelegate.swift */,
+				070826741E52A36B00D6E28D /* bucketCrud.xcdatamodeld */,
 				078F01A81E4D5CBE00DC2EBC /* BucketListViewController.swift */,
 				078F01D81E4D69C600DC2EBC /* AddItemTableViewControllerDelegate.swift */,
 				078F01D41E4D646600DC2EBC /* AddItemTableViewController.swift */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070826761E52A36B00D6E28D /* bucketCrud.xcdatamodeld in Sources */,
 				078F01A91E4D5CBE00DC2EBC /* BucketListViewController.swift in Sources */,
 				078F01A71E4D5CBE00DC2EBC /* AppDelegate.swift in Sources */,
 				078F01D91E4D69C600DC2EBC /* AddItemTableViewControllerDelegate.swift in Sources */,
@@ -516,6 +520,7 @@
 				078F01CD1E4D5CBE00DC2EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		078F01CE1E4D5CBE00DC2EBC /* Build configuration list for PBXNativeTarget "bucketCrudTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				078F01D01E4D5CBE00DC2EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		078F01D11E4D5CBE00DC2EBC /* Build configuration list for PBXNativeTarget "bucketCrudUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,8 +538,22 @@
 				078F01D31E4D5CBE00DC2EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		070826741E52A36B00D6E28D /* bucketCrud.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				070826751E52A36B00D6E28D /* bucketCrud.xcdatamodel */,
+			);
+			currentVersion = 070826751E52A36B00D6E28D /* bucketCrud.xcdatamodel */;
+			path = bucketCrud.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 078F019B1E4D5CBE00DC2EBC /* Project object */;
 }

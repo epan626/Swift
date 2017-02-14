@@ -24,12 +24,6 @@ class DisplayViewController: UIViewController {
     }
  
     
-    
-//    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-//        print("uhm")
-//    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(direction.tag)
