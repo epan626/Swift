@@ -1,14 +1,14 @@
 //
-//  binaryCounterUITests.swift
-//  binaryCounterUITests
+//  binaryUITests.swift
+//  binaryUITests
 //
-//  Created by Eric Pan on 2/13/17.
+//  Created by Eric Pan on 2/14/17.
 //  Copyright © 2017 Eric Pan. All rights reserved.
 //
 
 import XCTest
 
-class binaryCounterUITests: XCTestCase {
+class binaryUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

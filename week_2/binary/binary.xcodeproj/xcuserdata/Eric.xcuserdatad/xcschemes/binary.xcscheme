@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07041D881E52A944002722CD"
-               BuildableName = "binaryCounter.app"
-               BlueprintName = "binaryCounter"
-               ReferencedContainer = "container:binaryCounter.xcodeproj">
+               BlueprintIdentifier = "078915891E5384740000CE52"
+               BuildableName = "binary.app"
+               BlueprintName = "binary"
+               ReferencedContainer = "container:binary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07041D9C1E52A944002722CD"
-               BuildableName = "binaryCounterTests.xctest"
-               BlueprintName = "binaryCounterTests"
-               ReferencedContainer = "container:binaryCounter.xcodeproj">
+               BlueprintIdentifier = "0789159D1E5384740000CE52"
+               BuildableName = "binaryTests.xctest"
+               BlueprintName = "binaryTests"
+               ReferencedContainer = "container:binary.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07041DA71E52A944002722CD"
-               BuildableName = "binaryCounterUITests.xctest"
-               BlueprintName = "binaryCounterUITests"
-               ReferencedContainer = "container:binaryCounter.xcodeproj">
+               BlueprintIdentifier = "078915A81E5384740000CE52"
+               BuildableName = "binaryUITests.xctest"
+               BlueprintName = "binaryUITests"
+               ReferencedContainer = "container:binary.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07041D881E52A944002722CD"
-            BuildableName = "binaryCounter.app"
-            BlueprintName = "binaryCounter"
-            ReferencedContainer = "container:binaryCounter.xcodeproj">
+            BlueprintIdentifier = "078915891E5384740000CE52"
+            BuildableName = "binary.app"
+            BlueprintName = "binary"
+            ReferencedContainer = "container:binary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07041D881E52A944002722CD"
-            BuildableName = "binaryCounter.app"
-            BlueprintName = "binaryCounter"
-            ReferencedContainer = "container:binaryCounter.xcodeproj">
+            BlueprintIdentifier = "078915891E5384740000CE52"
+            BuildableName = "binary.app"
+            BlueprintName = "binary"
+            ReferencedContainer = "container:binary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07041D881E52A944002722CD"
-            BuildableName = "binaryCounter.app"
-            BlueprintName = "binaryCounter"
-            ReferencedContainer = "container:binaryCounter.xcodeproj">
+            BlueprintIdentifier = "078915891E5384740000CE52"
+            BuildableName = "binary.app"
+            BlueprintName = "binary"
+            ReferencedContainer = "container:binary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
