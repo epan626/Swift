@@ -11,24 +11,52 @@ import CoreData
 
 class MainViewController: UITableViewController, AddItemDelegate {
     
-    var titles = [String]()
-    var content = [String]()
-    var date = [Date]()
-    
+    var Task = [Tasks]()
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    
+    //MARK: TABLE VIEW
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
-        cell.titleLabel.text = "\(titles[indexPath.row])"
-        cell.contentLabel.text = "\(content[indexPath.row])"
-        cell.dateLabel.text = "\(date[indexPath.row])"
-        // return cell so that Table View knows what to draw in each row
+        cell.titleLabel.text = "\(Task[indexPath.row].title!)"
+        cell.contentLabel.text = "\(Task[indexPath.row].text!)"
+        cell.dateLabel.text = "\(Task[indexPath.row].date!)"
+        if Task[indexPath.row].status == false {
+            cell.accessoryType = .none
+        } else if Task[indexPath.row].status == true {
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+                Task[indexPath.row].status = false
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print("\(error)")
+                }
+            } else {
+                cell.accessoryType = .checkmark
+                Task[indexPath.row].status = true
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print("\(error)")
+                }
+            }
+        }
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Task.count
+    }
+    
     
     
     override func viewDidLoad() {
@@ -47,12 +75,15 @@ class MainViewController: UITableViewController, AddItemDelegate {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
         do {
             let result = try managedObjectContext.fetch(request)
-            for x in 0...result.count-1 {
-                let task = result[x] as! Tasks
-                titles.append(task.title!)
-                content.append(task.text!)
-                date.append(task.date! as Date)
-            }
+            Task = result as! [Tasks]
+            
+//            for x in 0...result.count-1 {
+//                let task = result[x] as! Tasks
+//                titles.append(task.title!)
+//                content.append(task.text!)
+//                date.append(task.date! as Date)
+//                status.append(task.status)
+//            }
             
         } catch {
         print("\(error)")
