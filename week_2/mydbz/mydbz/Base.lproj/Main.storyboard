@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbL-Vw-efT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbL-Vw-efT">
                                 <rect key="frame" x="0.0" y="90" width="375" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUD-P9-mKg">
                                         <rect key="frame" x="8" y="17" width="359" height="30"/>
@@ -34,11 +33,16 @@
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="OYQ-OK-03M"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNb-Bk-Koa">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNb-Bk-Koa">
                                 <rect key="frame" x="0.0" y="167" width="375" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="XNQ-eW-AOB"/>
+                                </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFl-po-GL5">
                                 <rect key="frame" x="10" y="177" width="359" height="30"/>
@@ -47,10 +51,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHT-c0-Xab">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHT-c0-Xab">
                                 <rect key="frame" x="0.0" y="248" width="375" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="qyh-nV-J1q"/>
+                                </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Special" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNI-Au-Ror">
                                 <rect key="frame" x="10" y="258" width="359" height="30"/>
@@ -85,9 +91,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QbL-Vw-efT" firstAttribute="leading" secondItem="J0J-Yi-Vmc" secondAttribute="leading" id="2VH-Vn-wuJ"/>
+                            <constraint firstItem="CHT-c0-Xab" firstAttribute="leading" secondItem="J0J-Yi-Vmc" secondAttribute="leading" id="2d5-dx-YIm"/>
+                            <constraint firstItem="yNb-Bk-Koa" firstAttribute="leading" secondItem="J0J-Yi-Vmc" secondAttribute="leading" id="Ag4-lt-S5F"/>
+                            <constraint firstItem="yNb-Bk-Koa" firstAttribute="top" secondItem="QbL-Vw-efT" secondAttribute="bottom" constant="22" id="AzS-tf-TiV"/>
+                            <constraint firstAttribute="trailing" secondItem="QbL-Vw-efT" secondAttribute="trailing" id="ZaE-VZ-1bD"/>
+                            <constraint firstItem="QbL-Vw-efT" firstAttribute="top" secondItem="eFs-p4-oOf" secondAttribute="bottom" constant="26" id="ge2-mC-fTU"/>
+                            <constraint firstAttribute="trailing" secondItem="CHT-c0-Xab" secondAttribute="trailing" id="i6r-5x-49q"/>
+                            <constraint firstAttribute="trailing" secondItem="yNb-Bk-Koa" secondAttribute="trailing" id="jhz-W0-Dgf"/>
+                            <constraint firstItem="CHT-c0-Xab" firstAttribute="top" secondItem="yNb-Bk-Koa" secondAttribute="bottom" constant="26" id="mq3-gL-xDq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8R2-BU-LZw">
-                        <barButtonItem key="leftBarButtonItem" title="DBZ" id="IWn-XK-emu">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="IWn-XK-emu">
                             <connections>
                                 <action selector="dbzHomeButtonPressed:" destination="Yed-PQ-EXm" id="UHd-OD-hAu"/>
                             </connections>
@@ -219,7 +236,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Change Picture">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="changePictureButtonPressed:" destination="MhM-Ls-adB" eventType="touchUpInside" id="mkc-CF-FNS"/>
@@ -229,7 +246,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit DBZ" id="0XF-1X-LYf">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="rgC-S4-1bG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rgC-S4-1bG">
                             <connections>
                                 <action selector="CancelButtonPressed:" destination="MhM-Ls-adB" id="nzA-lg-9XL"/>
                             </connections>

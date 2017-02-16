@@ -32,54 +32,7 @@ class MainViewController: UICollectionViewController, AddPhotoDelegate, EditDbzD
     
     var characters = [Character]()
     
-    func addDbzButtonPressed(by controller: UIViewController, name: String, description: String, special: String, image: NSData) {
-        let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: managedObjectContext) as! Character
-        character.name = name
-        character.descript = description
-        character.special = special
-        character.image = image
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("\(error)")
-        }
-        self.fetchAllItems()
-    }
     
-    func doneButtonPressed(by controller: UIViewController, name: String, description: String, special: String, image: NSData, atIndexPath: NSIndexPath?) {
-        if let ip = atIndexPath {
-            characters[ip.row].name = name
-            characters[ip.row].descript = description
-            characters[ip.row].special = special
-            characters[ip.row].image =  image
-            collectionView?.reloadData()
-        }
-        
-    }
-    func deleteButtonPressed(by controller: UIViewController, atIndexPath: NSIndexPath?) {
-        let character = characters[(atIndexPath?.row)!]
-        managedObjectContext.delete(character)
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("\(error)")
-        }
-        characters.remove(at: (atIndexPath?.row)!)
-        self.fetchAllItems()
-    }
-    
-
-
-    func fetchAllItems() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Character")
-        do {
-            let result = try managedObjectContext.fetch(request)
-            characters = result as! [Character]
-        } catch {
-            print("\(error)")
-        }
-        collectionView?.reloadData()
-    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
@@ -99,6 +52,61 @@ class MainViewController: UICollectionViewController, AddPhotoDelegate, EditDbzD
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "editDBZ", sender: indexPath)
+    }
+
+    
+    
+    
+    
+    
+    
+    func addDbzButtonPressed(by controller: UIViewController, name: String, description: String, special: String, image: NSData) {
+        let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: managedObjectContext) as! Character
+        character.name = name
+        character.descript = description
+        character.special = special
+        character.image = image
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("\(error)")
+        }
+        self.fetchAllItems()
+    }
+    
+    func doneButtonPressed(by controller: UIViewController, name: String, description: String, special: String, image: NSData, atIndexPath: NSIndexPath?) {
+        if let ip = atIndexPath {
+            self.characters[ip.row].name = name
+            self.characters[ip.row].descript = description
+            self.characters[ip.row].special = special
+            self.characters[ip.row].image = image
+        }
+        collectionView?.reloadData()
+    }
+    func deleteButtonPressed(by controller: UIViewController, atIndexPath: NSIndexPath?) {
+        let character = characters[(atIndexPath?.row)!]
+        managedObjectContext.delete(character)
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("\(error)")
+        }
+        characters.remove(at: (atIndexPath?.row)!)
+        self.fetchAllItems()
+    }
+    
+    
+
+
+        func fetchAllItems() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Character")
+        do {
+            let result = try managedObjectContext.fetch(request)
+            characters = result as! [Character]
+        } catch {
+            print("\(error)")
+        }
+        collectionView?.reloadData()
     }
 
     
@@ -129,4 +137,5 @@ class MainViewController: UICollectionViewController, AddPhotoDelegate, EditDbzD
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue){}
 }
+
 

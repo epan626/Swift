@@ -27,9 +27,12 @@ class EditDbzController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        chosenimage = UIImagePNGRepresentation(dbzEditImageOutlet.image!) as NSData?
-        delegate?.doneButtonPressed(by: self, name: dbzEditNameOutlet.text!, description: dbzEditDescriptOutlet.text!, special: dbzEditSpecialOutlet.text!, image: chosenimage!, atIndexPath: indexPath)
+        if let chosenimage = UIImagePNGRepresentation(dbzEditImageOutlet.image!) as NSData? {
+        delegate?.doneButtonPressed(by: self, name: dbzEditNameOutlet.text!, description: dbzEditDescriptOutlet.text!, special: dbzEditSpecialOutlet.text!, image: chosenimage, atIndexPath: indexPath)
         self.performSegue(withIdentifier: "unwindToMain", sender: self)
+        } else {
+            print("wrong1")
+        }
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
@@ -43,8 +46,11 @@ class EditDbzController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as!UIImage
+        if let selectedPhoto = info[UIImagePickerControllerOriginalImage] as? UIImage {
         dbzEditImageOutlet.image = selectedPhoto
+        } else {
+            print("wrong")
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -53,13 +59,7 @@ class EditDbzController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     
-    @IBAction func addPhotoFromLibraryButtonPressed(_ sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
+
     @IBAction func changePictureButtonPressed(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
@@ -77,11 +77,6 @@ class EditDbzController: UIViewController, UIImagePickerControllerDelegate, UINa
             dbzEditImageOutlet.image = image
 
         }
-    //
-    //    override func didReceiveMemoryWarning() {
-    //        super.didReceiveMemoryWarning()
-    //        // Dispose of any resources that can be recreated.
-    //    }
     
 }
 
