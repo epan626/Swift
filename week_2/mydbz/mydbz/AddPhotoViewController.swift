@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     weak var delegate: AddPhotoDelegate?
     
@@ -54,10 +54,26 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
 
     
 //    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dbzNameOutlet.delegate = self
+        dbzSpecialOutlet.delegate = self
+        dbzDescriptionOutlet.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+    }
+    
+    func dismissKeyboard(){
+        dbzNameOutlet.resignFirstResponder()
+        dbzSpecialOutlet.resignFirstResponder()
+        dbzDescriptionOutlet.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dbzNameOutlet.resignFirstResponder()
+        dbzSpecialOutlet.resignFirstResponder()
+        dbzDescriptionOutlet.resignFirstResponder()
+        return true
+    }
 //    
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
