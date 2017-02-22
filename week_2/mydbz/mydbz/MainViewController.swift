@@ -58,8 +58,6 @@ class MainViewController: UICollectionViewController, AddPhotoDelegate, EditDbzD
     
     
     
-    
-    
     func addDbzButtonPressed(by controller: UIViewController, name: String, description: String, special: String, image: NSData) {
         let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: managedObjectContext) as! Character
         character.name = name

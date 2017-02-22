@@ -22,6 +22,7 @@ class MainViewController: UITableViewController, AddPhotoDelegate, ShowPhotoDele
     
     func showPhotoButtonPressed(by controller: CustomCell) {
         let indexPath = self.tableView.indexPath(for: controller)
+        print("hello")
         performSegue(withIdentifier: "editPhotoSegue", sender: indexPath)
     }
     
@@ -29,13 +30,11 @@ class MainViewController: UITableViewController, AddPhotoDelegate, ShowPhotoDele
     func addPhotoDoneButtonPressed(by controller: UIViewController, name: String, image: NSData, date: Date, indexPath: NSIndexPath?) {
         if let index = indexPath {
            let photo = photos[index.row]
-            print("hey")
            photo.image = image
            photo.name = name
            photo.date = date as NSDate
         } else {
         let myPhoto = NSEntityDescription.insertNewObject(forEntityName: "MyPhoto", into: managedObjectContext) as! MyPhoto
-            print("hey2")
         myPhoto.name = name
         myPhoto.image = image
         myPhoto.date = date as NSDate

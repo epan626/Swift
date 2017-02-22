@@ -18,7 +18,8 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
     @IBAction func addItemButtonPressed(_ sender: UIButton) {
-        delegate?.addItemButtonPressed(by: self, title: titleInputOutlet.text!, text: contentInputOutlet.text!, date: datePickerOutlet.date, status: false)
+        delegate?.addItemButtonPressed(by: self, title: titleInputOutlet.text!, text: contentInputOutlet
+            .text!, date: datePickerOutlet.date, status: false)
         
         print(titleInputOutlet.text!)
         print(contentInputOutlet.text!)
