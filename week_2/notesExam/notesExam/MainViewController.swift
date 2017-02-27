@@ -50,7 +50,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         myTableView.reloadData()
     }
     
-    
     //MARK: Callbacks
     func AddNotesBackButtonPressed(controller: UIViewController, text: String) {
             let date = Date()
